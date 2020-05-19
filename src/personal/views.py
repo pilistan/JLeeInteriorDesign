@@ -1,23 +1,14 @@
 from django.shortcuts import render
-
-# Create your views here.
+from account.models import Account
+ 
 
 def home_screen_view(request):
 	
 	context = {}
-	
-	# context = {
-	# 		'some_string': "QQ1QQQ",
-	# 		'some_number': 79979,
-			
-	# }
 
-	list_of_values = []
-	list_of_values.append("first entry")
-	list_of_values.append("second entry")
-	list_of_values.append("third entry")
-	list_of_values.append("fourth entry")
-	context['list_of_values'] = list_of_values
+	accounts = Account.objects.all()
+	context['accounts'] = accounts
 
 	return render(request, "personal/home.html", context)
 
+    	 
