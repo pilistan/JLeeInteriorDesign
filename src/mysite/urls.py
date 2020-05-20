@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
+from portfolio import views
 
 from personal.views import (
 	home_screen_view,
@@ -34,11 +35,14 @@ from account.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_screen_view, name="home"), 
+    #path('', home_screen_view, name="home"), 
+    path('', views.home, name="home"), 
     path('register/', registration_view, name="register"),
     path('logout/', logout_view, name="logout"),
     path('login/', login_view, name="login"),
     path('account/', account_view, name="account"),
+
+
 ]
  
 
