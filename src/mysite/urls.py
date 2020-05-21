@@ -19,6 +19,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 from portfolio import views
 
+#from portfolio.views import update
+
 from personal.views import (
 	home_screen_view,
 
@@ -41,7 +43,8 @@ urlpatterns = [
     path('logout/', logout_view, name="logout"),
     path('login/', login_view, name="login"),
     path('account/', account_view, name="account"),
-
+    #path("update_server/", update, name="update"),
+    #path('blog/', include('blog.urls')),
 
 ]
  
